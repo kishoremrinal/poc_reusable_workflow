@@ -1,0 +1,13 @@
+name: Call Reusable Packer Build
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusable_workflow.yml
+    with:
+      packer_version: '1.8.5'
+      build_name: 'TestBuild'

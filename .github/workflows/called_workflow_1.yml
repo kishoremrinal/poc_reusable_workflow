@@ -1,5 +1,5 @@
 
-name: Build Reusable
+name: Reusable Build
 
 on:
   workflow_call:

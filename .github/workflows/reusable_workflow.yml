@@ -17,18 +17,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-    - name: Install Packer
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y curl unzip
-        curl -fsSL https://releases.hashicorp.com/packer/${{ inputs.packer_version }}/packer_${{ inputs.packer_version }}_linux_amd64.zip -o packer.zip
-        unzip packer.zip -d /usr/local/bin/
-
-    - name: Packer Version Check
-      run: packer version
-
     - name: Simulate Packer Build
       run: echo "Simulating build for ${{ inputs.build_name }} using Packer version ${{ inputs.packer_version }}"
